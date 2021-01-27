@@ -1,20 +1,14 @@
 import React from 'react';
 import styles from './Layout.module.css';
-import NavigationBar from "../../Components/NavigationBar/NavigationBar";
+import Header from "../../components/Header/Header";
+import Content from "../../components/Content/Content";
 
 class Layout extends React.Component {
 
     render() {
         return (
             <div className={styles.Layout}>
-                <header>
-                   <NavigationBar />
-                </header>
 
-                <main>
-                    {this.props.children}
-                    <h1>layout</h1>
-                </main>
             </div>
         )
     }
