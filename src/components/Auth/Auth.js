@@ -1,11 +1,22 @@
 import React from "react";
 import classes from './Auth.module.css';
 
-const Auth = (props) => {
-    return (
+class Auth extends React.Component {
+    formHandler() {
+        
+    }
+    render() {
+
+        return (
             <div className={classes.Auth}>
-                <h1>Autorisation</h1>
+                <div>
+                    <h1>Autorisation</h1>
+                    <form action={this.formHandler()}>
+                        <input type="text"/>
+                    </form>
+                </div>
             </div>
-    )
+        )
+    }
 }
 export default Auth;

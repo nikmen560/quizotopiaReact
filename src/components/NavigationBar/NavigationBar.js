@@ -12,12 +12,12 @@ const navLinks = [
     {
         value: 'create quiz',
         href: '/quiz-create',
-        exact: true,
+        exact: false,
     },
     {
         value: 'auth',
         href: '/auth',
-        exact: true,
+        exact: false,
     },
 
 ]
@@ -29,13 +29,10 @@ class NavigationBar extends React.Component {
     renderNavLinks() {
         return navLinks.map((link, index) => {
             return (
-                // <NavItem key={index}
-                //     value={link.value}
-                //     href={link.href}
-                //     exact={link.exact}
-                // />
+
                 <li className={classes.NavItem}>
                     <NavLink
+                        exact={link.exact}
                         to={link.href}
                         activeClassName={classes.active}
                     >
@@ -49,14 +46,12 @@ class NavigationBar extends React.Component {
     render() {
 
         return (
-            // <Router>
                 <nav className={classes.NavigationBar}>
                     <ul>
                         {this.renderNavLinks()}
                     </ul>
                 </nav>
 
-            // </Router>
         )
     }
 

@@ -28,11 +28,13 @@
     padding: 14px 16px;
     text-decoration: none;
 }
-.NavItem a:hover .active {
-    background-color: #555;
-    color: white;
+.NavItem a:hover  {
+    background-color: #bebdbd;
 }
 /*.active {*/
 /*    background-color: #555555; */
 /*    color:white;*/
 /*}*/
+.active {
+    background-color: #bebdbd;
+}

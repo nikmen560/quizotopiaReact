@@ -1,3 +1,13 @@
 .QuizzesList {
-    width: 600px;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    flex-grow: 1;
+    width: 100%;
+    background: linear-gradient(270deg, #6f7272 0%, #817d7d 100%);
+}
+.QuizzesList > div {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
 }

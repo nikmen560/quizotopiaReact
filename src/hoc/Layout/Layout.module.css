@@ -1,3 +1,8 @@
 .Layout {
-    text-align: center;
+    height: 100vh;
+}
+.Layout main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
