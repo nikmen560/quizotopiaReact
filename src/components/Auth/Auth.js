@@ -3,23 +3,32 @@ import classes from './Auth.module.css';
 import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
 
-const inputs = [
-    {
-        type: 'email',
-        placeholder: 'Email',
-        required: true,
-    },
-    {
-        type: 'password',
-        placeholder: 'Password',
-        required: true,
-    },
-]
 
 class Auth extends React.Component {
 
+    state = {
+        inputs: [
+            {
+                type: 'email',
+                placeholder: 'Email',
+                required: true,
+            },
+            {
+                type: 'password',
+                placeholder: 'Password',
+                required: true,
+            },
+        ]
+    }
+    loginHandler = () => {
+
+    }
+    registerHandler = () => {
+
+    }
+
     renderInput = () => {
-        return inputs.map((input, index) => {
+        return this.state.inputs.map((input, index) => {
             return (
                 <Input
                     key={index}
@@ -49,11 +58,14 @@ class Auth extends React.Component {
                         <Button
                             type={'submit'}
                             name={'register'}
-                            disabled={true}
+                            disabled={false}
+                            onClick={this.registerHandler}
                         />
                         <Button
                             type={'submit'}
                             name={'login'}
+                            disabled={false}
+                            onClick={this.loginHandler()}
                         />
                     </form>
                 </div>
