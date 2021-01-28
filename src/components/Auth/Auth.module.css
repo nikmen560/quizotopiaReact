@@ -6,20 +6,36 @@
     width: 100%;
     background: #282828;
     color: #eeeeee;
+
 }
 .Auth > div {
     width: 100%;
     max-width: 600px;
     padding: 0 20px;
-    border: 1px solid white;
+
+
+
 }
 .Auth h1 {
     text-align: center;
-
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+    border: 1px solid white;
+    box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.5);
+    border-radius: 5px;
+    border-bottom: none;
 }
 .AuthForm {
-    background: #eee;
-    box-shadow: 2px 2px 2px rgba(0,0,0, .5);
     padding: 15px;
+    border: 1px solid white;
+    box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.5);
     border-radius: 5px;
+}
+.AuthForm > div {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.AuthForm button {
+    padding: 10px 15px;
 }

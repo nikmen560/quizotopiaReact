@@ -30,8 +30,9 @@ class NavigationBar extends React.Component {
         return navLinks.map((link, index) => {
             return (
 
-                <li className={classes.NavItem}>
+                <li className={classes.NavItem} key={index}>
                     <NavLink
+
                         exact={link.exact}
                         to={link.href}
                         activeClassName={classes.active}
