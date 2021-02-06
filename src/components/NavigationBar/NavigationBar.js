@@ -6,8 +6,8 @@ import {NavLink} from "react-router-dom";
 const navLinks = [
     {
         value: 'quizzes',
-        href: '/',
-        exact: true,
+        href: '/quiz-list',
+        exact: false,
     },
     {
         value: 'create quiz',
@@ -18,6 +18,11 @@ const navLinks = [
         value: 'auth',
         href: '/auth',
         exact: false,
+    },
+    {
+        value: 'home-page',
+        href: '/',
+        exact: true,
     },
 
 ]
