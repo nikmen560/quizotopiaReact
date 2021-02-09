@@ -1,32 +1,23 @@
 import React from "react";
 import classes from './HomePage.module.css';
-import Modal from "../Modal/Modal";
+import Button from "../UI/Button/Button";
+import Auth from "../Auth/Auth";
 
 class HomePage extends React.Component {
 
-    state = {
-
-        showModal: false
-    };
-
-    showModal = e => {
-        this.setState({
-            showModal : !this.state.showModal
-
-        })
-        debugger;
-    }
 
     render() {
         return (
             <div className={classes.HomePage}>
                 <div>
                     <h1>Home page</h1>
-                    <Modal show={this.state.show}/>
-                    <button onClick={e => {
-                        this.showModal();
-                    }}>show modal
-                    </button>
+                    <h3>to continue you should sign in</h3>
+                    <Button
+                        onClick={Auth}
+                        name={'SignIn'}
+                        show={true}
+                    />
+
                 </div>
             </div>
         )

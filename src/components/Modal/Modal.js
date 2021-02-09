@@ -1,37 +1,60 @@
 import React from "react";
 import classes from './Modal.module.css';
-import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
+import Input from "../UI/Input/Input";
 
 
 class Modal extends React.Component {
-
-
-    state = {}
-    loginHandler = () => {
-
+    renderButtons = () => {
+        return this.props.buttons.map((btn, index) => {
+            return (
+                <Button
+                    key={index}
+                    type={btn.type}
+                    name={btn.name}
+                    disabled={btn.disabled}
+                    onClick={btn.onClick}
+                />
+            )
+        })
     }
-    registerHandler = () => {
-
-    }
-
-
-    formHandler(event) {
-        event.preventDefault()
+    renderInputs = () => {
+        return this.props.inputs.map((input, index) => {
+            return (
+                <Input
+                    key={index}
+                    type={input.type}
+                    placeholder={input.placeholder}
+                    required={input.required}
+                />
+            )
+        })
     }
 
     render() {
 
-        return (
-            <div>
-                {this.props.show ?
+        if (this.props.show) {
+            return (
+                <div className={classes.ModalOverlay}>
+                    <div className={classes.ModalContent}>
+                        <div className={classes.ModalHeader}>
+                            {this.props.modalHeader}
+                        </div>
+                        <div className={classes.ModalBody}>
+                            {this.props.children}
+                            {this.props.renderInputs()}
+                        </div>
+                        <div className={classes.ModalFooter}>
+                            {this.renderButtons()}
+                        </div>
+                    </div>
 
-                    <h3>modal</h3>
+                </div>
+            )
+        } else {
+            return null;
+        }
 
-                : null
-                }
-            </div>
-        )
     }
 }
 

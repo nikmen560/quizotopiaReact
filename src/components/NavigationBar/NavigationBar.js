@@ -1,7 +1,8 @@
 import React from "react";
 import classes from './NavigationBar.module.css';
-// import NavItem from "../NavItem/NavItem";
 import {NavLink} from "react-router-dom";
+import Button from "../UI/Button/Button";
+import Auth from "../Auth/Auth";
 
 const navLinks = [
     {
@@ -14,11 +15,7 @@ const navLinks = [
         href: '/quiz-create',
         exact: false,
     },
-    {
-        value: 'auth',
-        href: '/auth',
-        exact: false,
-    },
+
     {
         value: 'home-page',
         href: '/',
@@ -29,7 +26,16 @@ const navLinks = [
 
 class NavigationBar extends React.Component {
 
+    state = {
+        showModal: false
+    }
 
+    showAuth = () => {
+        this.setState({
+            showModal: !this.state.showModal
+
+        })
+    }
 
     renderNavLinks() {
         return navLinks.map((link, index) => {
@@ -55,6 +61,12 @@ class NavigationBar extends React.Component {
                 <nav className={classes.NavigationBar}>
                     <ul>
                         {this.renderNavLinks()}
+                            <Button
+                            onClick={this.showAuth.bind(this)}
+                            name={'auth'}
+                            />
+
+                        <Auth show={this.state.showModal}/>
                     </ul>
                 </nav>
 

@@ -5,10 +5,12 @@
     border: 1px solid #ccc;
     background: none;
     color: #eeeeee;
-    font-weight: bold;
+    /*font-weight: bold;*/
     text-transform: uppercase;
-    font-size: 12px;
+    /*font-size: 12px;*/
     margin-right: 15px;
+    font-family: inherit;
+    font-size: 1em;
 }
 
 
@@ -18,3 +20,4 @@
 .Button:disabled {
     color: rgba(255,255,255, .4);
 }
+

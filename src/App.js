@@ -13,7 +13,6 @@ function App() {
         <BrowserRouter>
             <Layout>
                 <Switch>
-                    <Route path={'/auth'} component={Auth}/>
                     <Route path={'/quiz-create'} component={QuizCreate}/>
                     <Route path={'/quiz-list'} component={QuizzesList}/>
                     <Route path={'/'} component={HomePage}/>
