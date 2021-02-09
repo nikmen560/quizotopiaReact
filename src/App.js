@@ -1,14 +1,26 @@
 import './App.css';
-import Layout from './hoc/Layout/Layout';
+import React from "react";
+import Auth from "./components/Auth/Auth";
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import QuizzesList from "./components/QuizzesList/QuizzesList";
+import QuizCreate from "./components/QuizCreate/QuizCreate";
+import Layout from "./hoc/Layout/Layout";
+import HomePage from "./components/HomePage/HomePage";
 
 function App() {
-  return (
-    <div className="App">
-      <Layout>
+    return (
 
-      </Layout>
-    </div>
-  );
+        <BrowserRouter>
+            <Layout>
+                <Switch>
+                    <Route path={'/quiz-create'} component={QuizCreate}/>
+                    <Route path={'/quiz-list'} component={QuizzesList}/>
+                    <Route path={'/'} component={HomePage}/>
+                </Switch>
+            </Layout>
+        </BrowserRouter>
+
+    );
 }
 
 export default App;

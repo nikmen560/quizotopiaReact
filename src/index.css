@@ -1,14 +1,31 @@
+@font-face {
+  font-family: 'silkscreennormal';
+  src: url('./fonts/font/slkscr-webfont.woff2') format('woff2'),
+  url('./fonts/font/slkscr-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'silkscreenbold';
+  src: url('./fonts/bold/slkscrb-webfont.woff2') format('woff2'),
+  url('./fonts/bold/slkscrb-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+
+}
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'silkscreennormal', 'silkscreenbold', 'Roboto', sans-serif;
+  /*font-family: 'silkscreennormal' , -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',*/
+  /*  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',*/
+  /*  sans-serif;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: 'silkscreennormal',source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
