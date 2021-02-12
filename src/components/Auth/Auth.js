@@ -8,7 +8,6 @@ import Modal from "../Modal/Modal";
 class Auth extends React.Component {
 
     state = {
-        show: this.props.show,
         header: 'auth',
         inputs: [
             {
@@ -73,14 +72,9 @@ class Auth extends React.Component {
     loginHandler() {
 
     }
-    onClose = () => {
-        this.setState({
-            show: !this.state.show
-        })
-    }
 
     render() {
-        if(!this.state.show) {
+        if(!this.props.show) {
             return null;
         }
         return (
@@ -88,7 +82,7 @@ class Auth extends React.Component {
                 <div className={classes.Auth}>
                     <span
                         className={classes.close + ' fa fa-times '}
-                        onClick={this.onClose.bind(this)}
+                        onClick={this.props.onClose}
                     ></span>
                     <div className={classes.AuthHeader}>
                         <h2>Auth</h2>

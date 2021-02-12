@@ -2,6 +2,7 @@ import React from "react";
 import classes from './HomePage.module.css';
 import Button from "../UI/Button/Button";
 import Auth from "../Auth/Auth";
+import Modal from "../Modal/Modal";
 
 class HomePage extends React.Component {
 
@@ -10,10 +11,11 @@ class HomePage extends React.Component {
         show: false,
     }
     showAuth = () => {
-        this.setState({
-            show: !this.state.show
-        })
-}
+        this.setState(prev => ({
+            show: !prev.show
+        }));
+    }
+
     render() {
         return (
             <div className={classes.HomePage}>
@@ -24,13 +26,11 @@ class HomePage extends React.Component {
                         onClick={this.showAuth.bind(this)}
                         name={'SignIn'}
                     />
-                    {this.state.show ?
+
                     <Auth
                         show={this.state.show}
-                    /> :
-                        null
-                    }
-
+                        onClose={this.showAuth}
+                    />
                 </div>
             </div>
         )

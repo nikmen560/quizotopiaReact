@@ -6,7 +6,9 @@ import Input from "../UI/Input/Input";
 
 class Modal extends React.Component {
 
+onClose = () => {
 
+}
     render() {
 
         if (this.props.show) {
