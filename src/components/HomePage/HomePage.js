@@ -6,6 +6,14 @@ import Auth from "../Auth/Auth";
 class HomePage extends React.Component {
 
 
+    state = {
+        show: false,
+    }
+    showAuth = () => {
+        this.setState({
+            show: !this.state.show
+        })
+}
     render() {
         return (
             <div className={classes.HomePage}>
@@ -13,10 +21,15 @@ class HomePage extends React.Component {
                     <h1>Home page</h1>
                     <h3>to continue you should sign in</h3>
                     <Button
-                        onClick={Auth}
+                        onClick={this.showAuth.bind(this)}
                         name={'SignIn'}
-                        show={true}
                     />
+                    {this.state.show ?
+                    <Auth
+                        show={this.state.show}
+                    /> :
+                        null
+                    }
 
                 </div>
             </div>

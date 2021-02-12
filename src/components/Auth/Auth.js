@@ -8,6 +8,7 @@ import Modal from "../Modal/Modal";
 class Auth extends React.Component {
 
     state = {
+        show: this.props.show,
         header: 'auth',
         inputs: [
             {
@@ -36,10 +37,31 @@ class Auth extends React.Component {
             },
         ]
     }
-
-
-
-
+    renderButtons = () => {
+        return this.state.buttons.map((btn, index) => {
+            return (
+                <Button
+                    key={index}
+                    type={btn.type}
+                    name={btn.name}
+                    disabled={btn.disabled}
+                    onClick={btn.onClick}
+                />
+            )
+        })
+    }
+    renderInputs = () => {
+        return this.state.inputs.map((input, index) => {
+            return (
+                <Input
+                    key={index}
+                    type={input.type}
+                    placeholder={input.placeholder}
+                    required={input.required}
+                />
+            )
+        })
+    }
 
     formHandler(event) {
         event.preventDefault()
@@ -51,24 +73,40 @@ class Auth extends React.Component {
     loginHandler() {
 
     }
+    onClose = () => {
+        this.setState({
+            show: !this.state.show
+        })
+    }
 
     render() {
-
+        if(!this.state.show) {
+            return null;
+        }
         return (
-            <form onSubmit={this.formHandler}>
-            <Modal
-                modalHeader={'Auth'}
-                show={this.props.show}
-                inputs={this.props.inputs}
-                buttons = {this.state.buttons}
-            >
+            <div className={classes.AuthOverlay}>
+                <div className={classes.Auth}>
+                    <span
+                        className={classes.close + ' fa fa-times '}
+                        onClick={this.onClose.bind(this)}
+                    ></span>
+                    <div className={classes.AuthHeader}>
+                        <h2>Auth</h2>
 
-                    {/*{this.renderInput()}*/}
+                    </div>
+                    <form onSubmit={this.formHandler}>
+                        <div className={classes.AuthBody}>
+                            {this.renderInputs()}
+                        </div>
+                        <div className={classes.AuthFooter}>
+                            {this.renderButtons()}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
 
 
-
-            </Modal>
-            </form>
         )
     }
 }

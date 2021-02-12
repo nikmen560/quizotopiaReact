@@ -5,31 +5,7 @@ import Input from "../UI/Input/Input";
 
 
 class Modal extends React.Component {
-    renderButtons = () => {
-        return this.props.buttons.map((btn, index) => {
-            return (
-                <Button
-                    key={index}
-                    type={btn.type}
-                    name={btn.name}
-                    disabled={btn.disabled}
-                    onClick={btn.onClick}
-                />
-            )
-        })
-    }
-    renderInputs = () => {
-        return this.props.inputs.map((input, index) => {
-            return (
-                <Input
-                    key={index}
-                    type={input.type}
-                    placeholder={input.placeholder}
-                    required={input.required}
-                />
-            )
-        })
-    }
+
 
     render() {
 
