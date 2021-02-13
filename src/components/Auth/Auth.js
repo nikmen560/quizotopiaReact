@@ -81,9 +81,9 @@ class Auth extends React.Component {
             <div className={classes.AuthOverlay}>
                 <div className={classes.Auth}>
                     <span
-                        className={classes.close + ' fa fa-times '}
+                        className={classes.close}
                         onClick={this.props.onClose}
-                    ></span>
+                    ><i className="fa fa-times" /></span>
                     <div className={classes.AuthHeader}>
                         <h2>Auth</h2>
 

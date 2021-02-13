@@ -41,7 +41,18 @@
     position: absolute;
     right: 10px;
     top: 10px;
+    cursor: pointer;
+
 }
+.close:hover{
+    opacity: 0.5;
+}
+
+.close:active {
+    top: 11px;
+}
+
+
 .AuthHeader > form {
     padding-top: 10px;
 }

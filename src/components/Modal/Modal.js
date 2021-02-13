@@ -20,10 +20,9 @@ onClose = () => {
                         </div>
                         <div className={classes.ModalBody}>
                             {this.props.children}
-                            {this.props.renderInputs()}
                         </div>
                         <div className={classes.ModalFooter}>
-                            {this.renderButtons()}
+                            {this.props.renderButtons()}
                         </div>
                     </div>
 
