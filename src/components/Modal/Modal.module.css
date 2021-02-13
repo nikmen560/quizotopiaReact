@@ -1,20 +1,27 @@
 .ModalOverlay{
+ display: flex;
+    justify-content: center;
+    align-content: center;
     position: fixed;
-    color: #eeeeee;
-    z-index: 100;
-    left: 50%;
-    top: 50%;
-    max-width: 600px;
-    width: 100%;
-    transform: translate(-50%, -50%);
-
-
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    overflow: hidden;
 }
 
 .ModalContent {
-    margin: 15% auto;
     /*padding: 20px;*/
-    background-color: #00b3ff;
+    max-width: 600px;
+    width: 100%;
+    background-color: #000;
+    border: 1px solid white;
+    position: relative;
+    padding: 30px;
+
 }
 
 
@@ -31,16 +38,20 @@
 
 }
 .close {
-    left: 10px;
-    top: 0;
-    font-size: 28px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: #444444;
+    position: absolute;
+    right: 10px;
+    top: 10px;
     cursor: pointer;
+
 }
+.close:hover{
+    opacity: 0.5;
+}
+
+.close:active {
+    top: 11px;
+}
+
 .ModalFooter {
 
 }

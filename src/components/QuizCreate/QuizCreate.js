@@ -7,7 +7,9 @@ import Modal from "../Modal/Modal";
 class QuizCreate extends React.Component {
 
     state = {
-        show: false,
+        isForm: true,
+        show: true,
+        header: 'create quiz',
         inputs: [
             {
                 type: 'text',
@@ -30,6 +32,14 @@ class QuizCreate extends React.Component {
                 required: true,
             },
 
+        ],
+        buttons: [
+            {
+                type: 'submit',
+                name:'create',
+                disabled: 'false',
+                onClick: this.onCreateQuiz
+            }
         ]
 
     }
@@ -51,33 +61,37 @@ class QuizCreate extends React.Component {
             show: !prev.show
         }))
     }
+    renderButtons = () => {
+        return this.state.buttons.map((btn, index) => {
+            return (
+                <Button
+                    key={index}
+                    type={btn.type}
+                    name={btn.name}
+                    disabled={btn.disabled}
+                     onClick={btn.onClick}
+                />
+            )
+        })
+    }
+
 
     render() {
         return (
             <Modal
+                isForm={this.state.form}
             show={this.state.show}
             onClose={this.showModal}
+            renderButtons={this.renderButtons}
+            modalHeader={this.state.header}
             >
                 <form onSubmit={this.formHandler} className={classes.QuizCreateForm}>
-
                     <div>
-
+                        {this.renderInputs()}
                         <select>
                             <option value="1">1</option>
                         </select>
                     </div>
-                    <Button
-                        type={'submit'}
-                        name={'register'}
-                        disabled={true}
-                        // onClick={this.registerHandler}
-                    />
-                    <Button
-                        type={'submit'}
-                        name={'login'}
-                        disabled={true}
-                        // onClick={this.loginHandler()}
-                    />
                 </form>
             </Modal>
         )
