@@ -27,14 +27,17 @@ const navLinks = [
 class NavigationBar extends React.Component {
 
     state = {
-        showModal: false
+        showModal: false,
     }
 
-    showAuth = () => {
+    showAuth()  {
         this.setState({
             showModal: !this.state.showModal
-
         })
+        debugger;
+        return (
+            <Auth show={this.state.showModal}/>
+        )
     }
 
     renderNavLinks() {
@@ -66,7 +69,7 @@ class NavigationBar extends React.Component {
                             name={'auth'}
                             />
 
-                        <Auth show={this.state.showModal}/>
+                        {/*<Auth show={this.state.showModal}/>*/}
                     </ul>
                 </nav>
 

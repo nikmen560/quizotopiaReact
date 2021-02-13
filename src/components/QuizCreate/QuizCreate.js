@@ -7,6 +7,7 @@ import Modal from "../Modal/Modal";
 class QuizCreate extends React.Component {
 
     state = {
+        show: false,
         inputs: [
             {
                 type: 'text',
@@ -45,10 +46,18 @@ class QuizCreate extends React.Component {
         })
     }
 
+    showModal = () => {
+        this.setState(prev =>({
+            show: !prev.show
+        }))
+    }
+
     render() {
         return (
-            <Modal>
-                <h1>Create question</h1>
+            <Modal
+            show={this.state.show}
+            onClose={this.showModal}
+            >
                 <form onSubmit={this.formHandler} className={classes.QuizCreateForm}>
 
                     <div>
