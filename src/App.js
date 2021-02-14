@@ -1,6 +1,5 @@
 import './App.css';
 import React from "react";
-import Auth from "./components/Auth/Auth";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import QuizzesList from "./components/QuizzesList/QuizzesList";
 import QuizCreate from "./components/QuizCreate/QuizCreate";

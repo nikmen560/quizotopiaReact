@@ -1,32 +1,33 @@
-.ModalOverlay{
- display: flex;
+
+.ModalOverlay {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-content: center;
     position: fixed;
     top: 0;
-    bottom: 0;
     right: 0;
     left: 0;
+    bottom: 0;
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
-    overflow: hidden;
-}
+    opacity: 1;
+    animation: all .5s ease;
+    overflow-x: hidden;
+    overflow-y: auto;
 
+}
 .ModalContent {
-    /*padding: 20px;*/
     max-width: 600px;
     width: 100%;
-    background-color: #000;
+    padding: 30px;
+    background-color: rgb(0,0,0);
+    color: white;
     border: 1px solid white;
     position: relative;
-    padding: 30px;
-
 }
-
-
 .ModalHeader {
-
+    /*position: relative;*/
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -35,7 +36,6 @@
     box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.5);
     border-radius: 5px;
     border-bottom: none;
-
 }
 .close {
     position: absolute;
@@ -52,12 +52,23 @@
     top: 11px;
 }
 
-.ModalFooter {
 
-}
+/*.ModalHeader > form {*/
+/*    padding-top: 10px;*/
+/*}*/
 .ModalBody {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.AuthBody input {
 
 }
-.ModalHeader {
-
+.ModalFooter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

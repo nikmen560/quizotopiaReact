@@ -86,12 +86,10 @@ class QuizCreate extends React.Component {
             modalHeader={this.state.header}
             >
                 <form onSubmit={this.formHandler} className={classes.QuizCreateForm}>
-                    <div>
                         {this.renderInputs()}
                         <select>
                             <option value="1">1</option>
                         </select>
-                    </div>
                 </form>
             </Modal>
         )
